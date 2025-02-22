@@ -1,0 +1,19 @@
+@import "../abstracts/variable";
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: $offWhite;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $primary;
+}

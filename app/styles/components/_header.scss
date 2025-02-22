@@ -1,0 +1,23 @@
+@import "../abstracts/variable";
+
+header {
+  position: fixed;
+  top: 0;
+  left: 10px;
+}
+
+.wrapper {
+  header {
+    width: calc(100% - $sidebar-width);
+    max-width: 2500px;
+    margin-left: $sidebar-width-collapse;
+    transition: 0.3s;
+  }
+
+  &.active {
+    header {
+      width: calc(100% - $sidebar-width-collapse);
+      max-width: 2500px;
+    }
+  }
+}
