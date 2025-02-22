@@ -2,7 +2,7 @@ import "../styles/components/_header.scss";
 
 export default function Header() {
   return (
-    <header className="border-bottom pe-3">
+    <header className="border-bottom pe-3 ps-2">
       <nav className="navbar align-items-center px-0">
         <a
           href="javascript:void(0)"

@@ -30,6 +30,7 @@ export default function RootLayout({
                 <div className="page-content">{children}</div>
                 <Footer />
               </div>
+              <div className="sidebar-bg"></div>
             </div>
           </main>
           <script
