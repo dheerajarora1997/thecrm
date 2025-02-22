@@ -1,0 +1,39 @@
+{
+  "name": "The CRM",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 9090",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.5.1",
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "mongoose": "^8.10.1",
+    "next": "15.0.3",
+    "next-auth": "^4.24.11",
+    "nodemailer": "^6.10.0",
+    "react": "^18.0.0",
+    "react-bootstrap": "^2.10.9",
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.54.2",
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.0.2",
+    "redux": "^5.0.1",
+    "sass": "^1.81.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.5",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "prettier": "^3.5.1",
+    "typescript": "5.7.3"
+  }
+}
