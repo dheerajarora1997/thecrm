@@ -3,10 +3,10 @@ import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook } from "react-redux";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import counterReducer from "../reducers/counterSlice";
+import sidebarReducer from "../reducers/sidebarSlice";
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    sidebar: sidebarReducer,
   },
 
   middleware: (getDefaultMiddleware) => getDefaultMiddleware(),

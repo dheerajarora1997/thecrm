@@ -3,13 +3,20 @@ import "../styles/components/_sidebar.scss";
 import "../styles/abstracts/_variable.scss";
 
 export default function Sidebar() {
+  const toggleSidebar = () => {
+    document.querySelector(".wrapper")?.classList.toggle("active");
+    document.querySelector("body")?.classList.toggle("overflow-hidden");
+  };
+
   return (
-    <div className="sidebar bg-tertiary text-white d-none d-md-flex">
+    <div className="sidebar text-white d-none d-md-flex">
       <ul className="nav nav-sidebar flex-nowrap flex-column w-100">
         {/* TODO : loop will be added here */}
         <li className="text-center w-100 d-block py-1">
           <a
-            href="javascript:void(0);"
+            onClick={() => {
+              toggleSidebar();
+            }}
             className="w-100 d-flex align-items-center ps-2 pe-3 py-1"
           >
             <ToggleIcon />
@@ -17,16 +24,14 @@ export default function Sidebar() {
         </li>
         {/* Last Item will be  display at the end */}
         <li className="text-center w-100 d-block">
-          <a
-            href="javascript:void(0);"
-            className="w-100 d-flex align-items-center ps-2 pe-3 mb-1"
-          >
+          <a className="w-100 d-flex align-items-center ps-2 pe-3 mb-1">
             <i aria-hidden="true" className="text-white">
               D
             </i>
             <span className="ml-3">Dashboard</span>
           </a>
         </li>
+
         <li className="text-center w-100 d-block mt-auto">
           <a
             href="./login.html"
