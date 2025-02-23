@@ -13,11 +13,12 @@ import InventoryIcon from "../assets/icons/Inventory";
 import PromotionalMailIcon from "../assets/icons/PromotionalMail";
 import ReferralBenefitsIcon from "../assets/icons/ReferralBenefits";
 import NewsletterIcon from "../assets/icons/Newsletter";
-import Invoice from "../invoice/page";
+import InvoiceIcon from "../assets/icons/Invoice";
 import EmployeeIcon from "../assets/icons/Employee";
 import ReportsIcon from "../assets/icons/Reports";
 import SettingsIcon from "../assets/icons/Settings";
 import HelpIcon from "../assets/icons/Help";
+import SignOutIcon from "../assets/icons/SignOut";
 
 export default function Sidebar() {
   const toggleSidebar = () => {
@@ -41,8 +42,8 @@ export default function Sidebar() {
     Inventory: <InventoryIcon />,
     PromotionalMails: <PromotionalMailIcon />,
     ReferralBenefits: <ReferralBenefitsIcon />,
-    DailyNewsletter: <NewsletterIcon />,
-    Invoice: <Invoice />,
+    Newsletter: <NewsletterIcon />,
+    Invoice: <InvoiceIcon />,
     Employee: <EmployeeIcon />,
     Reports: <ReportsIcon />,
     Help: <HelpIcon />,
@@ -80,14 +81,7 @@ export default function Sidebar() {
             href="./login.html"
             className="w-100 d-flex align-items-center pl-2 pr-3"
           >
-            <i
-              className="fi fi-sign-out p-2"
-              data-toggle="tooltip"
-              data-placement="right"
-              data-container="body"
-              title="Sign Out"
-              aria-hidden="true"
-            ></i>
+            <SignOutIcon />
             <span className="ml-3">Sign Out</span>
           </a>
         </li>

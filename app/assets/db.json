@@ -67,7 +67,7 @@
     {
       "id": 9,
       "name": "Newsletter",
-      "icon": "DailyNewsletter",
+      "icon": "Newsletter",
       "path": "/Daily Newsletter",
       "component": "Daily Newsletter",
       "exact": true
@@ -82,10 +82,10 @@
     },
     {
       "id": 9,
-      "name": "Employee management",
-      "icon": "Employee management",
-      "path": "/Employee management",
-      "component": "Employee management",
+      "name": "Employee",
+      "icon": "Employee",
+      "path": "/Employee",
+      "component": "Employee",
       "exact": true
     },
     {
