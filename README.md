@@ -14,3 +14,6 @@
 - Reports
 - Settings
 - Help
+
+Resources
+https://www.svgrepo.com/

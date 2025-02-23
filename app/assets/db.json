@@ -1,0 +1,116 @@
+{
+  "moduleAllowed": [
+    {
+      "id": 1,
+      "name": "Dashboard",
+      "icon": "Dashboard",
+      "path": "/dashboard",
+      "component": "Dashboard",
+      "exact": true
+    },
+    {
+      "id": 2,
+      "name": "Customers",
+      "icon": "Customers",
+      "path": "/Customers",
+      "component": "Customers",
+      "exact": true
+    },
+    {
+      "id": 3,
+      "name": "Products",
+      "icon": "Products",
+      "path": "/Products",
+      "component": "Products",
+      "exact": true
+    },
+    {
+      "id": 4,
+      "name": "Sales",
+      "icon": "Sales",
+      "path": "/Sales",
+      "component": "Sales",
+      "exact": true
+    },
+    {
+      "id": 5,
+      "name": "Landing Page",
+      "icon": "LandingPage",
+      "path": "/landingPage",
+      "component": "Landing Page",
+      "exact": true
+    },
+    {
+      "id": 6,
+      "name": "Inventory",
+      "icon": "Inventory",
+      "path": "/Inventory",
+      "component": "Inventory",
+      "exact": true
+    },
+    {
+      "id": 7,
+      "name": "Promotional Mails",
+      "icon": "PromotionalMails",
+      "path": "/Promotional Mails",
+      "component": "Promotional Mails",
+      "exact": true
+    },
+    {
+      "id": 8,
+      "name": "Referral Benefits",
+      "icon": "ReferralBenefits",
+      "path": "/Referral Benefits",
+      "component": "Referral Benefits",
+      "exact": true
+    },
+    {
+      "id": 9,
+      "name": "Newsletter",
+      "icon": "DailyNewsletter",
+      "path": "/Daily Newsletter",
+      "component": "Daily Newsletter",
+      "exact": true
+    },
+    {
+      "id": 9,
+      "name": "Invoice",
+      "icon": "Invoice",
+      "path": "/Invoice",
+      "component": "Invoice",
+      "exact": true
+    },
+    {
+      "id": 9,
+      "name": "Employee management",
+      "icon": "Employee management",
+      "path": "/Employee management",
+      "component": "Employee management",
+      "exact": true
+    },
+    {
+      "id": 9,
+      "name": "Reports",
+      "icon": "Reports",
+      "path": "/Reports",
+      "component": "Reports",
+      "exact": true
+    },
+    {
+      "id": 9,
+      "name": "Help",
+      "icon": "Help",
+      "path": "/Help",
+      "component": "Help",
+      "exact": true
+    },
+    {
+      "id": 9,
+      "name": "Settings",
+      "icon": "Settings",
+      "path": "/Settings",
+      "component": "Settings",
+      "exact": true
+    }
+  ]
+}
