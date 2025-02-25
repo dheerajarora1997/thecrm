@@ -59,7 +59,7 @@ export default function Sidebar() {
             onClick={() => {
               toggleSidebar();
             }}
-            className="w-100 d-flex align-items-center ps-2 pe-3 py-1"
+            className="w-100 d-flex align-items-center ps-2 pe-2 py-1"
           >
             <ToggleIcon />
           </a>
@@ -68,7 +68,7 @@ export default function Sidebar() {
         {data?.map((item, index) => {
           return (
             <li className="text-center w-100 d-block" key={`menu-${index}`}>
-              <a className="w-100 d-flex align-items-center ps-2 pe-3 mb-1">
+              <a className="w-100 d-flex align-items-center ps-2 pe-2 mb-1">
                 {iconMap[item.icon] || iconMap[item.name] || null}
                 <span className="ml-3">{item?.name}</span>
               </a>
@@ -79,7 +79,7 @@ export default function Sidebar() {
         <li className="text-center w-100 d-block mt-auto">
           <a
             href="./login.html"
-            className="w-100 d-flex align-items-center pl-2 pr-3"
+            className="w-100 d-flex align-items-center ps-2 pe-2"
           >
             <SignOutIcon />
             <span className="ml-3">Sign Out</span>

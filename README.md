@@ -15,5 +15,13 @@
 - Settings
 - Help
 
+## Project run
+
+```
+
+JSON Server
+$ json-server --watch db.json
+
 Resources
 https://www.svgrepo.com/
+```

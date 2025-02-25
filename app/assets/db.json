@@ -112,5 +112,158 @@
       "component": "Settings",
       "exact": true
     }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Customer 1",
+      "email": "",
+      "phone": "",
+      "address": ""
+    },
+    {
+      "id": 2,
+      "name": "Customer 1",
+      "email": "",
+      "phone": "",
+      "address": ""
+    },
+    {
+      "id": 3,
+      "name": "Customer 1",
+      "email": "",
+      "phone": "",
+      "address": ""
+    },
+    {
+      "id": 4,
+      "name": "Customer 1",
+      "email": "",
+      "phone": "",
+      "address": ""
+    },
+    {
+      "id": 5,
+      "name": "Customer 1",
+      "email": "",
+      "phone": "",
+      "address": ""
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": "",
+      "quantity": "",
+      "category": ""
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": "",
+      "quantity": "",
+      "category": ""
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "price": "",
+      "quantity": "",
+      "category": ""
+    },
+    {
+      "id": 4,
+      "name": "Product 4",
+      "price": "",
+      "quantity": "",
+      "category": ""
+    },
+    {
+      "id": 5,
+      "name": "Product 5",
+      "price": "",
+      "quantity": "",
+      "category": ""
+    }
+  ],
+  "sales": [
+    {
+      "id": 1,
+      "product": "Product 1",
+      "customer": "Customer 1",
+      "quantity": "",
+      "price": "",
+      "total": ""
+    },
+    {
+      "id": 2,
+      "product": "Product 2",
+      "customer": "Customer 2",
+      "quantity": "",
+      "price": "",
+      "total": ""
+    },
+    {
+      "id": 3,
+      "product": "Product 3",
+      "customer": "Customer 3",
+      "quantity": "",
+      "price": "",
+      "total": ""
+    },
+    {
+      "id": 4,
+      "product": "Product 4",
+      "customer": "Customer 4",
+      "quantity": "",
+      "price": "",
+      "total": ""
+    },
+    {
+      "id": 5,
+      "product": "Product 5",
+      "customer": "Customer 5",
+      "quantity": "",
+      "price": "",
+      "total": ""
+    }
+  ],
+  "inventory": [
+    {
+      "id": 1,
+      "product": "Product 1",
+      "quantity": "",
+      "price": "",
+      "total": ""
+    },
+    {
+      "id": 2,
+      "product": "Product 2",
+      "quantity": "",
+      "price": "",
+      "total": ""
+    },
+    {
+      "id": 3,
+      "product": "Product 3",
+      "quantity": "",
+      "price": "",
+      "total": ""
+    },
+    {
+      "id": 4,
+      "product": "Product 4",
+      "quantity": "",
+      "price": "",
+      "total": ""
+    },
+    {
+      "id": 5,
+      "product": "Product 5",
+      "quantity": "",
+      "price": "",
+      "total": ""
+    }
   ]
 }
