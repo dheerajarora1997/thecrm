@@ -49,6 +49,120 @@ export default function Sidebar() {
     Help: <HelpIcon />,
     Settings: <SettingsIcon />,
   };
+  let menuList = [
+    {
+      id: 1,
+      name: "Dashboard",
+      icon: "Dashboard",
+      path: "/dashboard",
+      component: "Dashboard",
+      exact: true,
+    },
+    {
+      id: 2,
+      name: "Customers",
+      icon: "Customers",
+      path: "/Customers",
+      component: "Customers",
+      exact: true,
+    },
+    {
+      id: 3,
+      name: "Products",
+      icon: "Products",
+      path: "/Products",
+      component: "Products",
+      exact: true,
+    },
+    {
+      id: 4,
+      name: "Sales",
+      icon: "Sales",
+      path: "/Sales",
+      component: "Sales",
+      exact: true,
+    },
+    {
+      id: 5,
+      name: "Landing Page",
+      icon: "LandingPage",
+      path: "/landingPage",
+      component: "Landing Page",
+      exact: true,
+    },
+    {
+      id: 6,
+      name: "Inventory",
+      icon: "Inventory",
+      path: "/Inventory",
+      component: "Inventory",
+      exact: true,
+    },
+    {
+      id: 7,
+      name: "Promotional Mails",
+      icon: "PromotionalMails",
+      path: "/Promotional Mails",
+      component: "Promotional Mails",
+      exact: true,
+    },
+    {
+      id: 8,
+      name: "Referral Benefits",
+      icon: "ReferralBenefits",
+      path: "/Referral Benefits",
+      component: "Referral Benefits",
+      exact: true,
+    },
+    {
+      id: 9,
+      name: "Newsletter",
+      icon: "Newsletter",
+      path: "/Daily Newsletter",
+      component: "Daily Newsletter",
+      exact: true,
+    },
+    {
+      id: 9,
+      name: "Invoice",
+      icon: "Invoice",
+      path: "/Invoice",
+      component: "Invoice",
+      exact: true,
+    },
+    {
+      id: 9,
+      name: "Employee",
+      icon: "Employee",
+      path: "/Employee",
+      component: "Employee",
+      exact: true,
+    },
+    {
+      id: 9,
+      name: "Reports",
+      icon: "Reports",
+      path: "/Reports",
+      component: "Reports",
+      exact: true,
+    },
+    {
+      id: 9,
+      name: "Help",
+      icon: "Help",
+      path: "/Help",
+      component: "Help",
+      exact: true,
+    },
+    {
+      id: 9,
+      name: "Settings",
+      icon: "Settings",
+      path: "/Settings",
+      component: "Settings",
+      exact: true,
+    },
+  ];
 
   return (
     <div className="sidebar text-white d-none d-md-flex">
@@ -65,7 +179,7 @@ export default function Sidebar() {
           </a>
         </li>
         {/* Last Item will be  display at the end */}
-        {data?.map((item, index) => {
+        {menuList?.map((item, index) => {
           return (
             <li className="text-center w-100 d-block" key={`menu-${index}`}>
               <a className="w-100 d-flex align-items-center ps-2 pe-2 mb-1">

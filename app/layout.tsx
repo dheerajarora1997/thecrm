@@ -4,8 +4,10 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import { ReduxProvider } from "./providers/reduxProvider";
 import { useAppSelector } from "./store/hooks";
+import HEAD from "next/head";
 import "./styles/main.scss";
 import { ToastContainer } from "react-toastify";
+import Link from "next/link";
 // import type { Metadata } from "next";
 
 // export const metadata: Metadata = {
@@ -23,6 +25,9 @@ export default function RootLayout({
   };
   return (
     <html lang="en">
+      <HEAD>
+        <Link rel="stylesheet" href="./styles/main.scss" />
+      </HEAD>
       <body className="">
         <ReduxProvider>
           <ToastContainer />

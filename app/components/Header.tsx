@@ -6,7 +6,7 @@ export default function Header() {
       <nav className="navbar align-items-center px-0">
         <a
           href="javascript:void(0)"
-          className="navbar-brand d-flex text-tertiary"
+          className="navbar-brand d-flex text-primary"
         >
           Customer logo
         </a>
