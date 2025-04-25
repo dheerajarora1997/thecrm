@@ -1,36 +1,143 @@
 @import "../abstracts/variable";
 
-table {
+.controlled-table {
+  position: relative;
   width: 100%;
-  border-collapse: collapse;
-  border-radius: $border-radius;
-  overflow: hidden;
   box-shadow: $box-shadow;
-  background-color: $white;
-  margin-bottom: 1rem;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: $border-radius;
+    overflow: hidden;
+    background-color: $white;
 
-  thead {
-    tr {
-      background: $muted;
-      th,
-      td {
-        color: $white;
+    thead {
+      tr {
+        th,
+        td {
+          background: $muted;
+          color: $white;
+          font-weight: 500;
+        }
+      }
+    }
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          td,
+          th {
+            background: $offWhite;
+          }
+        }
+        &:nth-child(even) {
+          td,
+          th {
+            background: $white;
+          }
+        }
+        &:hover {
+          td,
+          th {
+            background: rgba($quinary, 0.3);
+          }
+        }
       }
     }
   }
-  tbody {
-    tr {
-      &:nth-child(odd) {
-        background: $offWhite;
+
+  &.table-sticky {
+    table {
+      overflow: auto;
+    }
+
+    table thead tr th,
+    table thead tr td {
+      position: sticky;
+      top: 0;
+    }
+
+    table[data-colfix="1"] td:first-child,
+    table[data-colfix="1"] th:first-child,
+    table[data-colfix="2"] td:first-child,
+    table[data-colfix="2"] th:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 11;
+      border-right: none;
+    }
+
+    table[data-colfix="1"] td:first-child,
+    table[data-colfix="1"] th:first-child {
+      // border-right: 1px solid #eee;
+    }
+
+    table[data-last-col="true"] td:last-child,
+    table[data-last-col="true"] th:last-child {
+      position: sticky;
+      right: 0;
+      z-index: 11;
+      // border-left: 1px solid #eee;
+    }
+
+    table[data-colfix="2"] td:nth-child(2),
+    table[data-colfix="2"] th:nth-child(2) {
+      position: sticky;
+      z-index: 11;
+      // border-right: 1px solid #eee;
+    }
+  }
+  @media only screen and (max-width: 769px) {
+    table {
+      thead {
+        display: none;
       }
-      &:nth-child(even) {
-        background: $white;
-      }
-      &:hover {
-        background: rgba($quinary, 0.3);
-        color: $white;
-      }
-      td {
+      tbody {
+        tr {
+          border-bottom: 5px solid $dullWhite;
+
+          &.grid-table-row {
+            border-top: 11px solid #f1f3f4;
+
+            &:first-child {
+              border: none;
+            }
+          }
+
+          td {
+            width: 100%;
+            display: block;
+            padding-left: 40% !important;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            @media only screen and (max-width: 767px) {
+              padding-left: 35% !important;
+              position: relative;
+            }
+
+            &:last-child {
+              padding-bottom: 10px;
+            }
+
+            &:not(:empty) {
+              &:before {
+                content: attr(data-title);
+                font-size: 14px;
+                color: #999;
+                line-height: 1.2;
+                font-weight: unset;
+                position: absolute;
+                width: 30%;
+                top: 14px;
+                left: 20px;
+                word-break: break-word;
+                @media only screen and (max-width: 767px) {
+                  font-size: 11px;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

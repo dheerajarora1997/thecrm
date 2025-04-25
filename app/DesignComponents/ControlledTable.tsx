@@ -23,6 +23,7 @@ type ITableProps = {
   sorting?: boolean;
   style?: React.CSSProperties;
   title?: string;
+  headerSticky?: boolean;
 };
 
 export default function ControlledTable({
@@ -34,6 +35,7 @@ export default function ControlledTable({
   sorting: enableSorting = false,
   style = {},
   title = "",
+  headerSticky = false,
 }: ITableProps) {
   const [globalFilter, setGlobalFilter] = useState("");
   const [pagination, setPagination] = useState({
@@ -98,52 +100,57 @@ export default function ControlledTable({
           />
         </div>
       </div>
-      <table border={border} cellPadding={cellPadding} style={{ ...style }}>
-        <thead>
-          {tableInstance.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <th
-                    key={header.id}
-                    onClick={
-                      enableSorting
-                        ? header.column.getToggleSortingHandler()
-                        : null
-                    }
-                    style={{ cursor: enableSorting ? "pointer" : "default" }}
-                  >
-                    {flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
-                    {{
-                      asc: " 🔼",
-                      desc: " 🔽",
-                    }[header.column.getIsSorted() as string] ?? null}
-                  </th>
-                );
-              })}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {tableInstance.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div
+        className={`controlled-table ${headerSticky ? "table-sticky" : ""}`}
+        style={{ overflow: "auto", maxHeight: "calc(100vh - 100px)" }}
+      >
+        <table border={border} cellPadding={cellPadding} style={{ ...style }}>
+          <thead>
+            {tableInstance.getHeaderGroups().map((headerGroup, index) => (
+              <tr key={index}>
+                {headerGroup.headers.map((header, ind) => {
+                  return (
+                    <th
+                      key={ind}
+                      onClick={
+                        enableSorting
+                          ? header.column.getToggleSortingHandler()
+                          : null
+                      }
+                      style={{ cursor: enableSorting ? "pointer" : "default" }}
+                    >
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                      {{
+                        asc: " 🔼",
+                        desc: " 🔽",
+                      }[header.column.getIsSorted() as string] ?? null}
+                    </th>
+                  );
+                })}
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {tableInstance.getRowModel().rows.map((row, index) => (
+              <tr key={index}>
+                {row.getVisibleCells().map((cell, ind) => (
+                  <td key={ind} data-title={cell.column.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="row align-items-center justify-content-between mt-2">
         <div className="col-sm-12 col-md-7"></div>
-        <div className="col-sm-12 col-md-4 text-end">
+        <div className="col-sm-12 col-md-5 text-end">
           <div className="row g-2 align-items-center justify-content-end">
-            <div className="col-4">
+            <div className="col-sm-3">
               <select
                 className="form-select"
                 value={pagination?.pageSize}
@@ -163,7 +170,7 @@ export default function ControlledTable({
                 ))}
               </select>
             </div>
-            <div className="col-7">
+            <div className="col-sm-5 col-md-7 col-lg-6">
               <div
                 className="btn-group"
                 role="group"
@@ -196,17 +203,6 @@ export default function ControlledTable({
             </div>
           </div>
         </div>
-      </div>
-      <div
-        style={{
-          marginTop: "10px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          gap: "10px",
-        }}
-      >
-        {/* Page Size Selection */}
       </div>
     </>
   );

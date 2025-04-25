@@ -1,15 +1,31 @@
+"use client";
+
+import ToggleIcon from "../assets/icons/ToggleIcon";
 import "../styles/components/_header.scss";
 
 export default function Header() {
+  const toggleSidebar = () => {
+    document.querySelector(".wrapper")?.classList.toggle("active");
+    document.querySelector("body")?.classList.toggle("overflow-hidden");
+  };
+  const windowWidth = typeof window !== undefined && window.innerWidth;
+  const isMobile = windowWidth <= 768; // Adjust the breakpoint as needed
   return (
     <header className="border-bottom px-3">
       <nav className="navbar align-items-center px-0">
-        <a
-          href="javascript:void(0)"
-          className="navbar-brand d-flex text-primary"
-        >
-          Customer logo
-        </a>
+        <div className="d-flex align-items-center">
+          {isMobile && (
+            <button className="btn bg-transparent p-0" onClick={toggleSidebar}>
+              <ToggleIcon color="#2e5283" />
+            </button>
+          )}
+          <a
+            href="javascript:void(0)"
+            className="navbar-brand d-flex text-primary"
+          >
+            Customer logo
+          </a>
+        </div>
         <ul className="navbar-nav ml-auto flex-row align-items-center">
           <li className="nav-item mx-2">
             <button className="btn btn-primary btn-sm btn-circle">+</button>

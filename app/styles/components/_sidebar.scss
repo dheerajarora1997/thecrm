@@ -77,8 +77,12 @@
 
 .wrapper.active {
   .sidebar {
-    min-width: $sidebar-width-collapse;
-    max-width: $sidebar-width-collapse;
+    @media only screen and (min-width: 768px) {
+      min-width: $sidebar-width-collapse;
+      max-width: $sidebar-width-collapse;
+    }
+    min-width: 0;
+    max-width: 0;
     text-align: center;
     height: 100%;
 

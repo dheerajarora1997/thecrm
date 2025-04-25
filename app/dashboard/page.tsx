@@ -24,16 +24,102 @@ export default function Dashboard() {
         header: "Role",
         accessorKey: "role",
       },
+      {
+        header: "Age",
+        accessorKey: "age",
+      },
+      {
+        header: "Department",
+        accessorKey: "department",
+      },
     ],
     []
   );
   const [data, setData] = useState<User[]>(() => [
-    { name: "Alice Johnson", email: "alice@example.com", role: "Admin" },
-    { name: "Bob Smith", email: "bob@example.com", role: "Editor" },
-    { name: "Charlie Brown", email: "charlie@example.com", role: "Viewer" },
-    { name: "David Miller", email: "david@example.com", role: "Admin" },
-    { name: "Eva Green", email: "eva@example.com", role: "Editor" },
-    { name: "Frank Ocean", email: "frank@example.com", role: "Viewer" },
+    {
+      name: "Alice Johnson",
+      email: "alice@example.com",
+      role: "Admin",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "Bob Smith",
+      email: "bob@example.com",
+      role: "Editor",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "Charlie Brown",
+      email: "charlie@example.com",
+      role: "Viewer",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "David Miller",
+      email: "david@example.com",
+      role: "Admin",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "Eva Green",
+      email: "eva@example.com",
+      role: "Editor",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "Frank Ocean",
+      email: "frank@example.com",
+      role: "Viewer",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "Alice Johnson",
+      email: "alice@example.com",
+      role: "Admin",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "Bob Smith",
+      email: "bob@example.com",
+      role: "Editor",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "Charlie Brown",
+      email: "charlie@example.com",
+      role: "Viewer",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "David Miller",
+      email: "david@example.com",
+      role: "Admin",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "Eva Green",
+      email: "eva@example.com",
+      role: "Editor",
+      age: 12,
+      department: "new one",
+    },
+    {
+      name: "Frank Ocean",
+      email: "frank@example.com",
+      role: "Viewer",
+      age: 12,
+      department: "new one",
+    },
   ]);
 
   const fallbackData = [
@@ -84,6 +170,7 @@ export default function Dashboard() {
           data={data}
           fallbackData={fallbackData}
           sorting={true}
+          headerSticky={true}
         />
       </div>
     </div>

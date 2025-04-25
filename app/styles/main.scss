@@ -12,9 +12,11 @@ main {
   .wrapper {
     .content {
       min-height: 90vh;
-      width: calc(100% - $sidebar-width-collapse);
-      max-width: 2500px;
-      margin-left: 76px;
+      @media only screen and (min-width: 768px) {
+        width: calc(100% - $sidebar-width-collapse);
+        max-width: 2500px;
+        margin-left: 76px;
+      }
       transition: 0.3s;
       .page-content {
         overflow: hidden;

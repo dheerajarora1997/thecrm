@@ -1,4 +1,4 @@
-export default function ToggleIcon() {
+export default function ToggleIcon(prop: any) {
   return (
     <svg
       width="34px"
@@ -9,8 +9,8 @@ export default function ToggleIcon() {
     >
       <path
         d="M4 12H20M4 8H20M4 16H12"
-        stroke="#ffffff"
-        strokeWidth="1"
+        stroke={prop.color || "#fff"}
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       ></path>
