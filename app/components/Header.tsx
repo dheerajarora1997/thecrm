@@ -8,7 +8,7 @@ export default function Header() {
     document.querySelector(".wrapper")?.classList.toggle("active");
     document.querySelector("body")?.classList.toggle("overflow-hidden");
   };
-  const windowWidth = typeof window !== undefined && window.innerWidth;
+  const windowWidth = (typeof window !== "undefined" && window.innerWidth) || 0;
   const isMobile = windowWidth <= 768; // Adjust the breakpoint as needed
   return (
     <header className="border-bottom px-3">
