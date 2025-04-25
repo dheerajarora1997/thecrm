@@ -1,0 +1,37 @@
+@import "../abstracts/variable";
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+  background-color: $white;
+  margin-bottom: 1rem;
+
+  thead {
+    tr {
+      background: $muted;
+      th,
+      td {
+        color: $white;
+      }
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background: $offWhite;
+      }
+      &:nth-child(even) {
+        background: $white;
+      }
+      &:hover {
+        background: rgba($quinary, 0.3);
+        color: $white;
+      }
+      td {
+      }
+    }
+  }
+}

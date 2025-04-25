@@ -36,8 +36,10 @@
 
   a {
     padding: 5px 0;
-    color: $white;
     text-decoration: none;
+    * {
+      color: $white;
+    }
 
     i,
     svg {

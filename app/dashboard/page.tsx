@@ -74,9 +74,10 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-      <div style={{ padding: "20px" }}>
+      <div className="mt-3 w-100 d-inline-block">
         <ControlledTable
-          border={1}
+          title={"List"}
+          border={0}
           cellPadding={10}
           style={{ borderCollapse: "collapse", width: "100%" }}
           columns={columns}
