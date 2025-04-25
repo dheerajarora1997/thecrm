@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import ToggleIcon from "../assets/icons/ToggleIcon";
 import "../styles/components/_header.scss";
+import Image from "next/image";
 
 export default function Header() {
   const toggleSidebar = () => {
@@ -9,7 +11,7 @@ export default function Header() {
     document.querySelector("body")?.classList.toggle("overflow-hidden");
   };
   const windowWidth = (typeof window !== "undefined" && window.innerWidth) || 0;
-  const isMobile = windowWidth <= 768; // Adjust the breakpoint as needed
+  const isMobile = windowWidth <= 768;
   return (
     <header className="border-bottom px-3">
       <nav className="navbar align-items-center px-0">
@@ -19,12 +21,15 @@ export default function Header() {
               <ToggleIcon color="#2e5283" />
             </button>
           )}
-          <a
-            href="javascript:void(0)"
-            className="navbar-brand d-flex text-primary"
-          >
-            Customer logo
-          </a>
+          <Link href={"/dashboard"}>
+            <Image
+              src="/assets/logo.png"
+              alt="customer logo"
+              width={150}
+              height={41}
+              style={{ width: "100%" }}
+            />
+          </Link>
         </div>
         <ul className="navbar-nav ml-auto flex-row align-items-center">
           <li className="nav-item mx-2">

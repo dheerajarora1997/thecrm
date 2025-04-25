@@ -1,11 +1,12 @@
+"use client";
+
+import { JSX, useEffect, useState } from "react";
 import ToggleIcon from "../assets/icons/ToggleIcon";
 import "../styles/components/_sidebar.scss";
 import "../styles/abstracts/_variable.scss";
 import { useGetModuleAllowedQuery } from "../apiService/services/sidebarApi";
-import { JSX, useEffect } from "react";
 import DashboardIcon from "../assets/icons/Dashboard";
 import CustomersIcon from "../assets/icons/Customers";
-import Products from "../products/page";
 import ProductsIcon from "../assets/icons/Products";
 import SalesIcon from "../assets/icons/Sales";
 import LandingPageIcon from "../assets/icons/LandingPage";
@@ -19,8 +20,11 @@ import ReportsIcon from "../assets/icons/Reports";
 import SettingsIcon from "../assets/icons/Settings";
 import HelpIcon from "../assets/icons/Help";
 import SignOutIcon from "../assets/icons/SignOut";
+import Link from "next/link";
 
 export default function Sidebar() {
+  const pathname = typeof window !== undefined && window.location.pathname;
+  const [currentpage, setCurrentPage] = useState(pathname);
   const toggleSidebar = () => {
     document.querySelector(".wrapper")?.classList.toggle("active");
     document.querySelector("body")?.classList.toggle("overflow-hidden");
@@ -30,7 +34,6 @@ export default function Sidebar() {
 
   useEffect(() => {
     getSidebarData();
-    console.log(data);
   }, []);
 
   const iconMap: Record<string, JSX.Element> = {
@@ -62,7 +65,7 @@ export default function Sidebar() {
       id: 2,
       name: "Customers",
       icon: "Customers",
-      path: "/Customers",
+      path: "/customers",
       component: "Customers",
       exact: true,
     },
@@ -70,7 +73,7 @@ export default function Sidebar() {
       id: 3,
       name: "Products",
       icon: "Products",
-      path: "/Products",
+      path: "/products",
       component: "Products",
       exact: true,
     },
@@ -78,7 +81,7 @@ export default function Sidebar() {
       id: 4,
       name: "Sales",
       icon: "Sales",
-      path: "/Sales",
+      path: "/sales",
       component: "Sales",
       exact: true,
     },
@@ -94,7 +97,7 @@ export default function Sidebar() {
       id: 6,
       name: "Inventory",
       icon: "Inventory",
-      path: "/Inventory",
+      path: "/inventory",
       component: "Inventory",
       exact: true,
     },
@@ -102,7 +105,7 @@ export default function Sidebar() {
       id: 7,
       name: "Promotional Mails",
       icon: "PromotionalMails",
-      path: "/Promotional Mails",
+      path: "/promotionalMails",
       component: "Promotional Mails",
       exact: true,
     },
@@ -110,7 +113,7 @@ export default function Sidebar() {
       id: 8,
       name: "Referral Benefits",
       icon: "ReferralBenefits",
-      path: "/Referral Benefits",
+      path: "/referralBenefits",
       component: "Referral Benefits",
       exact: true,
     },
@@ -118,47 +121,47 @@ export default function Sidebar() {
       id: 9,
       name: "Newsletter",
       icon: "Newsletter",
-      path: "/Daily Newsletter",
+      path: "/dailyNewsletter",
       component: "Daily Newsletter",
       exact: true,
     },
     {
-      id: 9,
+      id: 10,
       name: "Invoice",
       icon: "Invoice",
-      path: "/Invoice",
+      path: "/invoice",
       component: "Invoice",
       exact: true,
     },
     {
-      id: 9,
+      id: 11,
       name: "Employee",
       icon: "Employee",
-      path: "/Employee",
+      path: "/employee",
       component: "Employee",
       exact: true,
     },
     {
-      id: 9,
+      id: 12,
       name: "Reports",
       icon: "Reports",
-      path: "/Reports",
+      path: "/reports",
       component: "Reports",
       exact: true,
     },
     {
-      id: 9,
+      id: 13,
       name: "Help",
       icon: "Help",
-      path: "/Help",
+      path: "/help",
       component: "Help",
       exact: true,
     },
     {
-      id: 9,
+      id: 14,
       name: "Settings",
       icon: "Settings",
-      path: "/Settings",
+      path: "/settings",
       component: "Settings",
       exact: true,
     },
@@ -181,11 +184,18 @@ export default function Sidebar() {
         {/* Last Item will be  display at the end */}
         {menuList?.map((item, index) => {
           return (
-            <li className="text-center w-100 d-block" key={`menu-${index}`}>
-              <a className="w-100 d-flex align-items-center ps-2 pe-2 mb-1">
+            <li className={`text-center w-100 d-block`} key={`menu-${index}`}>
+              <Link
+                href={item.path}
+                className={`w-100 d-flex align-items-center ps-2 pe-2 mb-1 ${currentpage === item.path ? "active" : ""}`}
+                onClick={() => {
+                  setCurrentPage(item.path);
+                  document.querySelector(".wrapper")?.classList.add("active");
+                }}
+              >
                 {iconMap[item.icon] || iconMap[item.name] || null}
                 <span className="ml-3">{item?.name}</span>
-              </a>
+              </Link>
             </li>
           );
         })}

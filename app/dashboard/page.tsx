@@ -133,27 +133,27 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="w-100 d-inline-block mt-2">
-      <div className="info-grid shadow rounded mb-3">
+    <div className="w-100 d-inline-block">
+      <div className="info-grid shadow rounded my-3">
         <div className="card box-shadow-sm border-0 bg-quinary">
           <div className="card-body">
             <div className="row">
               <div className="col border-end border-tertiary m-2">
                 <div className="">
-                  <h4>Heading Here</h4>
+                  <h4>Total Sales</h4>
                   <h6 className="text-">4343</h6>
                 </div>
               </div>
               <div className="col border-end border-tertiary m-2">
                 <div className="">
-                  <h4>Heading Here</h4>
-                  <h6 className="text-">4343</h6>
+                  <h4>Today's Sale</h4>
+                  <h6 className="text-">43</h6>
                 </div>
               </div>
               <div className="col border-end border-tertiary m-2">
                 <div className="">
-                  <h4>Heading Here</h4>
-                  <h6 className="text-">4343</h6>
+                  <h4>Weekly Sales</h4>
+                  <h6 className="text-">343</h6>
                 </div>
               </div>
             </div>
@@ -161,8 +161,8 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="mt-3 w-100 d-inline-block">
-        <ControlledTable
-          title={"List"}
+        {/* <ControlledTable
+          title={"Sales"}
           border={0}
           cellPadding={10}
           style={{ borderCollapse: "collapse", width: "100%" }}
@@ -171,7 +171,7 @@ export default function Dashboard() {
           fallbackData={fallbackData}
           sorting={true}
           headerSticky={true}
-        />
+        /> */}
       </div>
     </div>
   );

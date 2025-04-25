@@ -1,5 +1,6 @@
 import React from "react";
+import Maintenance from "../components/Maintenance";
 
 export default function DailyNewsletter() {
-  return <div>Daily Newsletter Page</div>;
+  return <Maintenance />;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Nodata from "../components/Nodata";
 
-export default function ReferralBenifits() {
+export default function Reports() {
   return (
     <Nodata
       title="You Don't have permission to this feature"

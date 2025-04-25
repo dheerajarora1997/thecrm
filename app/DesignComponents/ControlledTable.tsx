@@ -24,6 +24,7 @@ type ITableProps = {
   style?: React.CSSProperties;
   title?: string;
   headerSticky?: boolean;
+  pageSizeToDisplay?: number;
 };
 
 export default function ControlledTable({
@@ -36,11 +37,12 @@ export default function ControlledTable({
   style = {},
   title = "",
   headerSticky = false,
+  pageSizeToDisplay = 10,
 }: ITableProps) {
   const [globalFilter, setGlobalFilter] = useState("");
   const [pagination, setPagination] = useState({
     pageIndex: 0,
-    pageSize: 3,
+    pageSize: pageSizeToDisplay,
   });
   const tableInstance = useReactTable({
     data,
