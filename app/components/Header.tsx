@@ -1,17 +1,27 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import ToggleIcon from "../assets/icons/ToggleIcon";
 import "../styles/components/_header.scss";
-import Image from "next/image";
 
 export default function Header() {
   const toggleSidebar = () => {
     document.querySelector(".wrapper")?.classList.toggle("active");
     document.querySelector("body")?.classList.toggle("overflow-hidden");
   };
-  const windowWidth = (typeof window !== "undefined" && window.innerWidth) || 0;
-  const isMobile = windowWidth <= 768;
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <header className="border-bottom px-3">
       <nav className="navbar align-items-center px-0">

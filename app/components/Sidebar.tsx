@@ -23,8 +23,12 @@ import SignOutIcon from "../assets/icons/SignOut";
 import Link from "next/link";
 
 export default function Sidebar() {
-  const pathname = typeof window !== undefined && window.location.pathname;
-  const [currentpage, setCurrentPage] = useState(pathname);
+  const [currentpage, setCurrentPage] = useState("/");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentPage(window.location.pathname);
+    }
+  }, []);
   const toggleSidebar = () => {
     document.querySelector(".wrapper")?.classList.toggle("active");
     document.querySelector("body")?.classList.toggle("overflow-hidden");
