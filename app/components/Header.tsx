@@ -12,7 +12,7 @@ export default function Header() {
         </a>
         <ul className="navbar-nav ml-auto flex-row align-items-center">
           <li className="nav-item mx-2">
-            <button className="btn btn-primary btn-sm">+</button>
+            <button className="btn btn-primary btn-sm btn-circle">+</button>
           </li>
           <li className="nav-item mx-2 d-none d-sm-inline-block">
             <div className="badge text-bg-primary rounded-pill">Status : </div>

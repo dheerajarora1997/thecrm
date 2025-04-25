@@ -3,6 +3,7 @@
 @import "./abstracts/variable", "./abstracts/helper";
 
 @import "./components/scrollBar";
+@import "./base/typography";
 
 body {
   background: $offWhite;
@@ -17,7 +18,7 @@ main {
       transition: 0.3s;
       .page-content {
         overflow: hidden;
-        padding: 60px 0 30px;
+        padding: 70px 15px 40px;
         min-height: calc(100vh + 1190px);
       }
     }

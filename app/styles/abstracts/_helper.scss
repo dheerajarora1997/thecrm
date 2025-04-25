@@ -1,5 +1,9 @@
 @import "./mixins";
 
+.shadow {
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
 .flex-center {
   @extend %flex-center;
 }

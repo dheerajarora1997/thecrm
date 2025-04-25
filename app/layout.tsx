@@ -22,11 +22,13 @@ export default function RootLayout({
 }>) {
   const toggleSidebar = () => {
     document.querySelector(".wrapper")?.classList.toggle("active");
+    document.querySelector("body")?.classList.remove("overflow-hidden");
   };
   return (
     <html lang="en">
       <HEAD>
-        <Link rel="stylesheet" href="./styles/main.scss" />
+        <Link rel="preconnect" href="https://fonts.googleapis.com" />
+        <Link rel="preconnect" href="https://fonts.gstatic.com" />
       </HEAD>
       <body className="">
         <ReduxProvider>

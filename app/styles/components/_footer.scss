@@ -1,17 +1,17 @@
 @import "../abstracts/variable";
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  // position: fixed;
+  // bottom: 0;
+  // left: 0;
   background-color: $offWhite;
 }
 
 .wrapper {
   footer {
-    width: calc(100% - $sidebar-width-collapse);
-    max-width: 2500px;
-    margin-left: $sidebar-width-collapse;
+    width: 100%;
+    // max-width: 2500px;
+    // margin-left: $sidebar-width-collapse;
     transition: 0.3s;
   }
 }

@@ -18,9 +18,18 @@
 
     &:first-child {
       border-bottom: 1px solid;
-      border-color: #fff;
-      a:hover {
-        background: none;
+      border-color: $white;
+      position: sticky;
+      top: 0;
+      background: $primary;
+      &:hover {
+        background: $primary;
+      }
+      a {
+        background: $primary;
+        &:hover {
+          background: $primary !important;
+        }
       }
     }
   }
@@ -39,7 +48,7 @@
       min-width: 25px;
       min-height: 25px;
       padding: 5px;
-      margin: 0 auto;
+      margin: 0 10px 0 5px;
     }
 
     span {
@@ -74,6 +83,7 @@
     a i,
     svg {
       pointer-events: auto;
+      margin: 0 auto;
     }
 
     a span {
@@ -121,7 +131,8 @@
 .wrapper:not(.active) {
   .sidebar > ul {
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
+    max-height: 100vh;
   }
 
   .sidebar-bg {

@@ -1,15 +1,18 @@
-$primary: #2e5283;
-$secondary: #2c3e50;
-$success: #28a745;
-$tertiary: #7886c7;
-$transparent: transparent;
-$quaternary: #b4d3ff;
-$quinary: #fbe6b7;
-$senary: #c7f2df;
-$septenary: #faccd9;
-$white: #ffffff;
-$offWhite: #fbfcff;
-$dullWhite: #d0ccd0;
+$primary: #2e5283; // Your main brand color (deep blue)
+
+$secondary: #406fa6; // A slightly lighter blue for hover states or accents
+$tertiary: #1e3a5c; // Darker blue, great for headers or text overlays
+$quaternary: #6791c9; // A brighter blue, good for highlights or call-to-action
+$quinary: #a9c1e3; // A pale sky blue for soft backgrounds
+$senary: #f0f6fc; // Very light blue tone, UI backgrounds
+
+$success: #28a745; // Standard success green
+$transparent: transparent; // Useful for overlays or reset states
+$septenary: #ffb703; // A warm yellow-orange accent (optional attention/highlight)
+
+$white: #ffffff; // True white
+$offWhite: #f8f9fa; // Subtle soft white for backgrounds
+$dullWhite: #e2e6ea; // Light grey-white, soft borders or inactive elements
 
 $sidebar-width: 210px;
 $sidebar-width-collapse: 76px;

@@ -11,7 +11,7 @@ export default function ProductsIcon() {
       <g
         id="Page-1"
         stroke=""
-        stroke-width="0"
+        strokeWidth="0"
         fill="#f2f2f2"
         fillRule="evenodd"
       >

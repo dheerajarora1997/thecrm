@@ -165,7 +165,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="sidebar text-white d-none d-md-flex">
+    <div className="sidebar text-white">
       <ul className="nav nav-sidebar flex-nowrap flex-column w-100">
         {/* TODO : loop will be added here */}
         <li className="text-center w-100 d-block py-1 mb-3">
