@@ -54,6 +54,30 @@ export default function ControlledTable({
     manualPagination: false,
   });
 
+  const prevBtnClicked = () => {
+    if (tableInstance.getCanPreviousPage()) {
+      setPagination((prev) => ({
+        ...prev,
+        pageIndex: prev.pageIndex - 1,
+      }));
+      tableInstance.previousPage();
+    } else {
+      tableInstance.setPageIndex(0);
+    }
+  };
+
+  const nextBtnClicked = () => {
+    if (tableInstance.getCanNextPage()) {
+      setPagination((prev) => ({
+        ...prev,
+        pageIndex: prev.pageIndex + 1,
+      }));
+      tableInstance.nextPage();
+    } else {
+      tableInstance.setPageIndex(0);
+    }
+  };
+
   return (
     <>
       <input
@@ -62,6 +86,7 @@ export default function ControlledTable({
         value={globalFilter ?? ""}
         onChange={(e) => setGlobalFilter(e.target.value)}
         style={{ marginBottom: "10px", padding: "5px", width: "30%" }}
+        className="w-100"
       />
       <table border={border} cellPadding={cellPadding} style={{ ...style }}>
         <thead>
@@ -109,27 +134,10 @@ export default function ControlledTable({
           marginTop: "10px",
           display: "flex",
           alignItems: "center",
+          justifyContent: "flex-end",
           gap: "10px",
         }}
       >
-        <button
-          onClick={() => tableInstance.previousPage()}
-          disabled={!tableInstance.getCanPreviousPage()}
-        >
-          Prev
-        </button>
-        <span>
-          Page {tableInstance.getState().pagination.pageIndex + 1} of{" "}
-          {tableInstance.getPageCount()}
-        </span>
-        <button
-          onClick={() => tableInstance.nextPage()}
-          disabled={!tableInstance.getCanNextPage()}
-        >
-          Next
-        </button>
-
-        {/* Page Size Selection */}
         <select
           value={pagination?.pageSize}
           onChange={(e) => {
@@ -147,6 +155,24 @@ export default function ControlledTable({
             </option>
           ))}
         </select>
+        <button
+          onClick={() => prevBtnClicked()}
+          disabled={!tableInstance.getCanPreviousPage()}
+        >
+          Prev
+        </button>
+        <span>
+          Page {tableInstance.getState().pagination.pageIndex + 1} of{" "}
+          {tableInstance.getPageCount()}
+        </span>
+        <button
+          onClick={() => nextBtnClicked()}
+          disabled={!tableInstance.getCanNextPage()}
+        >
+          Next
+        </button>
+
+        {/* Page Size Selection */}
       </div>
     </>
   );
