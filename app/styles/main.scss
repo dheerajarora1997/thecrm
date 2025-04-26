@@ -11,7 +11,6 @@ body {
 main {
   .wrapper {
     .content {
-      min-height: 90vh;
       @media only screen and (min-width: 768px) {
         width: calc(100% - $sidebar-width-collapse);
         max-width: 2500px;
@@ -21,7 +20,7 @@ main {
       .page-content {
         overflow: hidden;
         padding: 70px 15px 40px;
-        min-height: calc(100vh + 41px);
+        min-height: calc(100vh - 41px);
       }
     }
   }

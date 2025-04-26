@@ -171,7 +171,7 @@ export default function Customers() {
           fallbackData={fallbackData}
           sorting={true}
           headerSticky={true}
-          tableButtonLink={"/customer/create"}
+          tableButtonLink={"/customers/create"}
           tableButtonText={"+ Create Customer"}
         />
       </div>

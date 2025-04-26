@@ -90,14 +90,6 @@ export default function Sidebar() {
       exact: true,
     },
     {
-      id: 5,
-      name: "Landing Page",
-      icon: "LandingPage",
-      path: "/landingPage",
-      component: "Landing Page",
-      exact: true,
-    },
-    {
       id: 6,
       name: "Inventory",
       icon: "Inventory",
@@ -106,11 +98,27 @@ export default function Sidebar() {
       exact: true,
     },
     {
+      id: 10,
+      name: "Invoice",
+      icon: "Invoice",
+      path: "/invoice",
+      component: "Invoice",
+      exact: true,
+    },
+    {
       id: 7,
       name: "Promotional Mails",
       icon: "PromotionalMails",
       path: "/promotionalMails",
       component: "Promotional Mails",
+      exact: true,
+    },
+    {
+      id: 5,
+      name: "Landing Page",
+      icon: "LandingPage",
+      path: "/landingPage",
+      component: "Landing Page",
       exact: true,
     },
     {
@@ -127,14 +135,6 @@ export default function Sidebar() {
       icon: "Newsletter",
       path: "/dailyNewsletter",
       component: "Daily Newsletter",
-      exact: true,
-    },
-    {
-      id: 10,
-      name: "Invoice",
-      icon: "Invoice",
-      path: "/invoice",
-      component: "Invoice",
       exact: true,
     },
     {
