@@ -1,5 +1,10 @@
 @import "../abstracts/variable";
 
+// * {
+//   scrollbar-width: thin;
+//   scrollbar-color: darken($primary, 5%) $offWhite;
+// }
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 3px;

@@ -161,6 +161,8 @@ export default function Inventory() {
           sorting={true}
           headerSticky={true}
           pageSizeToDisplay={10}
+          tableButtonLink={"/inventory/create"}
+          tableButtonText={"+ Create Inventory"}
         />
       </div>
     </div>

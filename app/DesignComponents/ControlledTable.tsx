@@ -13,6 +13,7 @@ import {
 import { useState } from "react";
 
 import "../styles/components/_controlledTable.scss";
+import Link from "next/link";
 
 type ITableProps = {
   border?: number;
@@ -25,6 +26,8 @@ type ITableProps = {
   title?: string;
   headerSticky?: boolean;
   pageSizeToDisplay?: number;
+  tableButtonLink?: string;
+  tableButtonText?: string;
 };
 
 export default function ControlledTable({
@@ -38,6 +41,8 @@ export default function ControlledTable({
   title = "",
   headerSticky = false,
   pageSizeToDisplay = 10,
+  tableButtonLink = "",
+  tableButtonText = "",
 }: ITableProps) {
   const [globalFilter, setGlobalFilter] = useState("");
   const [pagination, setPagination] = useState({
@@ -92,14 +97,23 @@ export default function ControlledTable({
         <div className="col-sm-12 col-md-6">
           {title && <h3 className="">{title}</h3>}
         </div>
-        <div className="col-sm-12 col-md-3">
-          <input
-            type="text"
-            placeholder="Search..."
-            value={globalFilter ?? ""}
-            onChange={(e) => setGlobalFilter(e.target.value)}
-            className="w-100 form-control m-0"
-          />
+        <div className="col-sm-12 col-md-6">
+          <div className="d-flex justify-content-end align-items-center">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={globalFilter ?? ""}
+              onChange={(e) => setGlobalFilter(e.target.value)}
+              className="form-control my-0 mx-2"
+              style={{ maxWidth: "300px" }}
+            />
+
+            {tableButtonLink && (
+              <Link href={tableButtonLink} className="btn btn-primary">
+                {tableButtonText}
+              </Link>
+            )}
+          </div>
         </div>
       </div>
       <div
@@ -149,10 +163,10 @@ export default function ControlledTable({
         </table>
       </div>
       <div className="row align-items-center justify-content-between mt-2">
-        <div className="col-sm-12 col-md-7"></div>
-        <div className="col-sm-12 col-md-5 text-end">
-          <div className="row g-2 align-items-center justify-content-end">
-            <div className="col-sm-3">
+        <div className="col-sm-12 col-md-4"></div>
+        <div className="col-sm-12 col-md-8 text-end">
+          <div className="d-flex justify-content-end align-items-center">
+            <div className="mx-2">
               <select
                 className="form-select"
                 value={pagination?.pageSize}
@@ -172,7 +186,7 @@ export default function ControlledTable({
                 ))}
               </select>
             </div>
-            <div className="col-sm-5 col-md-7 col-lg-6">
+            <div className="">
               <div
                 className="btn-group"
                 role="group"

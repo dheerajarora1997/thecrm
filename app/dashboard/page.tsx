@@ -138,19 +138,19 @@ export default function Dashboard() {
         <div className="card box-shadow-sm border-0 bg-quinary">
           <div className="card-body">
             <div className="row">
-              <div className="col border-end border-tertiary m-2">
+              <div className="col-12 col-sm-4 border-end border-tertiary">
                 <div className="">
                   <h4>Total Sales</h4>
                   <h6 className="text-">4343</h6>
                 </div>
               </div>
-              <div className="col border-end border-tertiary m-2">
+              <div className="col-12 col-sm-4 border-end border-tertiary">
                 <div className="">
                   <h4>Today's Sale</h4>
                   <h6 className="text-">43</h6>
                 </div>
               </div>
-              <div className="col border-end border-tertiary m-2">
+              <div className="col-12 col-sm-4">
                 <div className="">
                   <h4>Weekly Sales</h4>
                   <h6 className="text-">343</h6>

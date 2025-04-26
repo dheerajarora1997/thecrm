@@ -17,7 +17,7 @@
         td {
           background: $muted;
           color: $white;
-          font-weight: 500;
+          fw: 500;
         }
       }
     }
@@ -125,7 +125,7 @@
                 font-size: 14px;
                 color: #999;
                 line-height: 1.2;
-                font-weight: unset;
+                fw: unset;
                 position: absolute;
                 width: 30%;
                 top: 14px;

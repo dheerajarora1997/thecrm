@@ -195,6 +195,9 @@ export default function Sidebar() {
                 onClick={() => {
                   setCurrentPage(item.path);
                   document.querySelector(".wrapper")?.classList.add("active");
+                  document
+                    .querySelector("body")
+                    ?.classList.remove("overflow-hidden");
                 }}
               >
                 {iconMap[item.icon] || iconMap[item.name] || null}

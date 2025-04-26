@@ -138,19 +138,19 @@ export default function Customers() {
         <div className="">
           <div className="card-body">
             <div className="row">
-              <div className="col-12 col-sm-12 col-md-4">
+              <div className="col-12 col-sm-4 col-md-4">
                 <div className="card box-shadow border-0 bg-quinary p-3 mb-2">
                   <h4>Total Customers</h4>
                   <h6 className="text-">4343</h6>
                 </div>
               </div>
-              <div className="col-12 col-sm-12 col-md-4">
+              <div className="col-12 col-sm-4 col-md-4">
                 <div className="card box-shadow border-0 bg-quinary p-3 mb-2">
                   <h4>Today's New</h4>
                   <h6 className="text-">12</h6>
                 </div>
               </div>
-              <div className="col-12 col-sm-12 col-md-4 border-end">
+              <div className="col-12 col-sm-4 col-md-4">
                 <div className="card box-shadow border-0 bg-quinary p-3 mb-2">
                   <h4>Recent Customers</h4>
                   <h6 className="text-">4343</h6>
@@ -171,6 +171,8 @@ export default function Customers() {
           fallbackData={fallbackData}
           sorting={true}
           headerSticky={true}
+          tableButtonLink={"/customer/create"}
+          tableButtonText={"+ Create Customer"}
         />
       </div>
     </div>

@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import { ReduxProvider } from "./providers/reduxProvider";
 import { useAppSelector } from "./store/hooks";
-import HEAD from "next/head";
+import Head from "next/head";
 import "./styles/main.scss";
 import { ToastContainer } from "react-toastify";
 import Link from "next/link";
@@ -26,10 +26,10 @@ export default function RootLayout({
   };
   return (
     <html lang="en">
-      <HEAD>
-        <Link rel="preconnect" href="https://fonts.googleapis.com" />
-        <Link rel="preconnect" href="https://fonts.gstatic.com" />
-      </HEAD>
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+      </Head>
       <body className="">
         <ReduxProvider>
           <ToastContainer />

@@ -131,6 +131,8 @@ export default function Dashboard() {
           sorting={true}
           headerSticky={true}
           pageSizeToDisplay={10}
+          tableButtonLink={"/products/create"}
+          tableButtonText={"+ Create Products"}
         />
       </div>
     </div>
