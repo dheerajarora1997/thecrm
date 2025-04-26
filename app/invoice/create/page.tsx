@@ -17,7 +17,7 @@ export default function createInvoice() {
   return (
     <div className="d-inline-block w-100 mt-3">
       <div className="row">
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-5">
           <h3 className="">Create Invoice</h3>
           <form className="mt-4">
             <div className="row">
@@ -47,7 +47,15 @@ export default function createInvoice() {
                   disabled
                 />
               </div>
-              <div className="form-group col-sm-12 col-md-6 mb-2">
+              <div className="form-group col-sm-12 col-md-3 mb-2">
+                <label htmlFor="customerId" className="form-label mb-1">
+                  Customer Id
+                </label>
+                <select className="form-select" id="customerId" required>
+                  <option value="">Select Customer Id</option>
+                </select>
+              </div>
+              <div className="form-group col-sm-12 col-md-5 mb-2">
                 <label htmlFor="customerName" className="form-label mb-1">
                   Customer Name
                 </label>
@@ -58,7 +66,7 @@ export default function createInvoice() {
                   required
                 />
               </div>
-              <div className="form-group col-sm-12 col-md-6 mb-2">
+              <div className="form-group col-sm-12 col-md-4 mb-2">
                 <label htmlFor="number" className="form-label mb-1">
                   Number
                 </label>
@@ -75,6 +83,18 @@ export default function createInvoice() {
                   Address
                 </label>
                 <textarea className="form-control" id="address" />
+              </div>
+              <div className="form-group col-sm-12 col-md-6 mb-2">
+                <label htmlFor="aadhar" className="form-label mb-1">
+                  Aadhar Number
+                </label>
+                <input type="text" className="form-control" id="aadhar" />
+              </div>
+              <div className="form-group col-sm-12 col-md-6 mb-2">
+                <label htmlFor="panNumber" className="form-label mb-1">
+                  Pan Number
+                </label>
+                <input type="text" className="form-control" id="panNumber" />
               </div>
               {products.map((product, i) => (
                 <div className="row align-items-end" key={i}>
@@ -137,13 +157,26 @@ export default function createInvoice() {
               ))}
 
               <div className="form-group col-sm-12 col-md-6 mb-2">
-                <label htmlFor="amount" className="form-label mb-1">
-                  Amount
+                <label htmlFor="paymentMode" className="form-label mb-1">
+                  Payment Mode
+                </label>
+                <select className="form-select" id="paymentMode" required>
+                  <option value="">Select Payment Mode</option>
+                  <option value="cash">Cash</option>
+                  <option value="cheque">Cheque</option>
+                  <option value="upi">UPI</option>
+                  <option value="netbanking">Net Banking</option>
+                  <option value="creditcard">Credit Card</option>
+                </select>
+              </div>
+              <div className="form-group col-sm-12 col-md-6 mb-2">
+                <label htmlFor="totalamount" className="form-label mb-1">
+                  Total Amount
                 </label>
                 <input
                   type="number"
                   className="form-control"
-                  id="amount"
+                  id="totalamount"
                   required
                 />
               </div>
@@ -165,24 +198,24 @@ export default function createInvoice() {
             </button>
           </form>
         </div>
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-7 ms-auto">
           <h4 className="">Preview</h4>
           <div className="position-relative invoiceDesign">
             <div className="invoice-wrapper" id="invoiceToPrint">
               <section className="invoice-header">
                 <div className="logo-section">
-                  <h2>Kazume Corporate</h2>
+                  <div className="invoice-heading2">Kazume Corporate</div>
                   <p>We deliver your problems</p>
                 </div>
                 <div className="invoice-title">
-                  <h1>INVOICE</h1>
+                  <div className="invoice-heading1">INVOICE</div>
                 </div>
               </section>
 
               <section className="invoice-info">
                 <div className="left-info">
-                  <h4>INVOICE TO</h4>
-                  <h2>Megumin Ryu</h2>
+                  <div className="invoice-heading4">INVOICE TO</div>
+                  <div className="invoice-heading3">Megumin Ryu</div>
                   <p>Supervisor, Blacksteel Company</p>
                   <p>Contact Person</p>
                   <p>Phone: (+62) 898 1234 5678</p>
@@ -261,8 +294,8 @@ export default function createInvoice() {
 
               <section className="invoice-summary">
                 <div className="left-summary">
-                  <h3>Total Due</h3>
-                  <h2>$100 USD</h2>
+                  <div className="invoice-heading3">Total Due</div>
+                  <div className="invoice-heading2">$100 USD</div>
                   <p>Late charge for 10 days</p>
                 </div>
                 <div className="right-summary">
@@ -273,13 +306,13 @@ export default function createInvoice() {
                     Tax (5%): <strong>$31</strong>
                   </p>
                   <div className="total">
-                    <h3>TOTAL: $649</h3>
+                    <div className="invoice-heading3">TOTAL: $649</div>
                   </div>
                 </div>
               </section>
 
               <section className="invoice-terms">
-                <h3>Terms & Conditions</h3>
+                <div className="invoice-heading3">Terms & Conditions</div>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -294,7 +327,7 @@ export default function createInvoice() {
                 </div>
                 <div className="signature">
                   <p>_____________________</p>
-                  <h4>Kazuma Jean</h4>
+                  <div className="invoice-heading4">Kazuma Jean</div>
                   <p>HR Director</p>
                 </div>
               </section>
