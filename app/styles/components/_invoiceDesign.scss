@@ -1,0 +1,78 @@
+@import "../abstracts/variable";
+
+.invoiceDesign {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  border: 1px solid $dark;
+  .invoice-wrapper {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    font-family: Arial, sans-serif;
+    color: #333;
+    p {
+      margin: 0;
+    }
+  }
+
+  .invoice-header,
+  .invoice-info,
+  .invoice-table,
+  .invoice-summary,
+  .invoice-terms,
+  .invoice-footer {
+    margin-bottom: 20px;
+  }
+
+  .invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .invoice-title h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .invoice-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .invoice-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .invoice-table th,
+  .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .invoice-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .total {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+  }
+
+  .invoice-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-info p,
+  .signature p {
+    margin: 2px 0;
+  }
+}
