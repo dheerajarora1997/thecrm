@@ -1,3 +1,7 @@
+"use client";
+import { useParams } from "next/navigation";
+
 export default function SingleCustomer() {
-  return <>hello world!</>;
+  const { id } = useParams();
+  return <>hello world! - {id}</>;
 }
