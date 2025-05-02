@@ -37,6 +37,9 @@ export default function createInvoice() {
     totalAmount: 0,
   };
 
+  const maxDiscountAmount = 999;
+  const discountAmount = 0;
+
   const [invoiceDate, setInvoiceDate] = useState(
     `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`
   );
@@ -80,7 +83,7 @@ export default function createInvoice() {
   return (
     <div className="d-inline-block w-100 mt-3">
       <div className="row">
-        <div className="col-12 col-md-7 ms-auto">
+        <div className="col-12 col-md-6 ms-auto">
           <h4 className="">Preview</h4>
           <div className="position-relative invoiceDesign">
             <div className="invoice-wrapper" id="invoiceToPrint">
@@ -101,9 +104,11 @@ export default function createInvoice() {
                     {cudtomerDetails?.name}
                   </div>
                   <p>{cudtomerDetails?.address}</p>
-                  <p>Contact Person</p>
+                  <p>Contact Details</p>
                   <p>Phone: {cudtomerDetails?.phone}</p>
                   <p>Email: {cudtomerDetails?.email}</p>
+                  {cudtomerDetails?.aadharNumber && <p>Aadhar No: {cudtomerDetails?.aadharNumber}</p>} 
+                  {cudtomerDetails?.panNumber && <p>Pan No: {cudtomerDetails?.panNumber}</p>}
                 </div>
                 <div className="right-info">
                   <p>
@@ -204,7 +209,7 @@ export default function createInvoice() {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-5">
+        <div className="col-12 col-md-6">
           <h3 className="">Create Invoice</h3>
           <form className="mt-4">
             <div className="row">
@@ -341,7 +346,7 @@ export default function createInvoice() {
                   }}
                 />
               </div>
-              <div className="bg-quinary bg-opacity-50 pt-2 rounded my-3 col-12">
+              <div className="bg-quinary bg-opacity-25 pt-2 rounded my-3 col-12">
                 <div className="row align-items-end pe-0 mb-2">
                   <div className="form-group col-sm-12 col-md-6">
                     <label
@@ -367,7 +372,7 @@ export default function createInvoice() {
                 </div>
                 {products.map((product, i) => (
                   <div
-                    className={`row align-items-center pe-0 mb-2 ${i > 0 ? "border-bottom" : ""}`}
+                    className={`row align-items-center pe-0 mb-2 g-2 ${i > 0 ? "border-bottom" : ""}`}
                     key={i}
                   >
                     <div className="form-group col-sm-12 col-md-6 mb-2">
@@ -484,7 +489,7 @@ export default function createInvoice() {
                 </label>
                 <input
                   type="number"
-                  className="form-control"
+                  className={`form-control ${invoiceDetails?.discountAmount > maxDiscountAmount ? "border-danger" : ""}`}
                   id="discountAmount"
                   value={invoiceDetails?.discountAmount}
                   onChange={(e) => {
@@ -495,6 +500,7 @@ export default function createInvoice() {
                     }));
                   }}
                 />
+                {invoiceDetails?.discountAmount > maxDiscountAmount && <small className="text-danger">Discount Amount can't be more then {maxDiscountAmount}.</small>}
               </div>
               <div className="col-12"></div>
               <div className="form-group col-sm-12 col-md-4 mb-2">

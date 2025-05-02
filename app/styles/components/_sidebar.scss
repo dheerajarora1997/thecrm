@@ -105,7 +105,7 @@
       display: none;
     }
     ul li:last-child {
-      width: $sidebar-width-collapse;
+      width: calc($sidebar-width-collapse - 8px);
     }
   }
 }
