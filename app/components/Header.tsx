@@ -39,7 +39,7 @@ export default function Header() {
               src="/assets/logo.png"
               alt="customer logo"
               width={150}
-              height={41}
+              height={40}
               style={{ width: "100%" }}
             />
           </Link>

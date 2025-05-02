@@ -207,7 +207,7 @@ export default function Sidebar() {
           );
         })}
 
-        <li className="text-center w-100 d-block mt-auto">
+        <li className="text-center d-block mt-auto">
           <a
             href="./login.html"
             className="w-100 d-flex align-items-center ps-2 pe-2"

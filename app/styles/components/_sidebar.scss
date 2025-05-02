@@ -14,22 +14,25 @@
   overflow: overlay;
   @include transition-ease(all, 0.5s);
 
-  li {
-    font-size: $font-size-base;
+  ul {
+    padding-bottom: 40px;
+    li {
+      font-size: $font-size-base;
 
-    &:first-child {
-      border-bottom: 1px solid;
-      border-color: $white;
-      position: sticky;
-      top: 0;
-      background: $primary;
-      &:hover {
-        background: $primary;
-      }
-      a {
+      &:first-child {
+        border-bottom: 1px solid;
+        border-color: $white;
+        position: sticky;
+        top: 0;
         background: $primary;
         &:hover {
-          background: $primary !important;
+          background: $primary;
+        }
+        a {
+          background: $primary;
+          &:hover {
+            background: $primary !important;
+          }
         }
       }
     }
@@ -101,6 +104,9 @@
     ol {
       display: none;
     }
+    ul li:last-child {
+      width: $sidebar-width-collapse;
+    }
   }
 }
 
@@ -129,7 +135,7 @@
 
         span {
           font-size: 95%;
-          fw: 400;
+          font-weight: 400;
         }
       }
     }
@@ -141,6 +147,14 @@
     overflow: hidden;
     overflow-y: auto;
     max-height: 100vh;
+    li:last-child {
+      position: fixed;
+      bottom: 0;
+      background-color: $primary;
+      width: calc($sidebar-width - 8px);
+      transition: width ease-in-out .3s;
+      border-top: 1px solid $quinary;
+    }
   }
 
   .sidebar-bg {

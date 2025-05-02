@@ -16,7 +16,7 @@ export default function Maintenance(props: {
         height={200}
         src="/assets/maintenance.png"
         alt="No Data"
-        className="w-1/2 mb-4"
+        className="mb-4"
       />
       <h4 className="">
         {props.title || "We are building something amazing."}
