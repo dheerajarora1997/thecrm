@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 import "../../styles/components/_invoiceDesign.scss";
 
 export default function createInvoice() {
@@ -81,12 +83,33 @@ export default function createInvoice() {
   }
 
   console.log(products, "products updated");
+  const generateInvoicePDF = useCallback(async () => {
+    const invoiceElement = document.getElementById("invoiceToPrint");
+
+    if (!invoiceElement) {
+      alert("Invoice element not found");
+      return;
+    }
+
+    const canvas = await html2canvas(invoiceElement, { scale: 2 });
+    const imgData = canvas.toDataURL("image/png");
+
+    const pdf = new jsPDF("p", "mm", "a4");
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+    pdf.save("invoice.pdf");
+  }, []);
 
   return (
     <div className="d-inline-block w-100 mt-3">
       <div className="row">
-        <div className="col-12 col-md-6 ms-auto">
+        <div className="col-12 col-md-6">
+          <div className="d-flex justify-content-between align-items-center mb-3">
           <h4 className="">Preview</h4>
+          <button className="btn btn-primary" onClick={generateInvoicePDF}>Download</button>
+          </div>
           <div className="position-relative invoiceDesign">
             <div className="invoice-wrapper" id="invoiceToPrint">
               <section className="invoice-header">
