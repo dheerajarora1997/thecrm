@@ -16,6 +16,8 @@ export default function createInvoice() {
     address: "",
     aadharNumber: "",
     panNumber: "",
+    gstNumber: "",
+    hsnCode: "",
   };
   const [products, setProducts] = useState([
     {
@@ -103,12 +105,22 @@ export default function createInvoice() {
                   <div className="invoice-heading3">
                     {cudtomerDetails?.name}
                   </div>
-                  <p>{cudtomerDetails?.address}</p>
+                  <p className="w-75">{cudtomerDetails?.address}</p>
                   <p>Contact Details</p>
                   <p>Phone: {cudtomerDetails?.phone}</p>
                   <p>Email: {cudtomerDetails?.email}</p>
-                  {cudtomerDetails?.aadharNumber && <p>Aadhar No: {cudtomerDetails?.aadharNumber}</p>} 
-                  {cudtomerDetails?.panNumber && <p>Pan No: {cudtomerDetails?.panNumber}</p>}
+                  {cudtomerDetails?.aadharNumber && (
+                    <p>Aadhar No: {cudtomerDetails?.aadharNumber}</p>
+                  )}
+                  {cudtomerDetails?.panNumber && (
+                    <p>Pan No: {cudtomerDetails?.panNumber}</p>
+                  )}
+                  {cudtomerDetails?.gstNumber && (
+                    <p>G.S.T. No: {cudtomerDetails?.gstNumber}</p>
+                  )}
+                  {cudtomerDetails?.hsnCode && (
+                    <p>H.S.N. Code: {cudtomerDetails?.hsnCode}</p>
+                  )}
                 </div>
                 <div className="right-info">
                   <p>
@@ -137,6 +149,9 @@ export default function createInvoice() {
                   <tbody>
                     {products?.length &&
                       products?.map((product, index) => {
+                        if (product.productName === "" && index > 0) {
+                          return null;
+                        }
                         return (
                           <tr key={index}>
                             <td>{index + 1}</td>
@@ -346,6 +361,38 @@ export default function createInvoice() {
                   }}
                 />
               </div>
+              <div className="form-group col-sm-12 col-md-12 mb-2">
+                <label htmlFor="gstNumber" className="form-label fw-bold mb-1">
+                  GST Number
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="gstNumber"
+                  value={cudtomerDetails.gstNumber}
+                  onChange={(e) => {
+                    const newCustomerDetails = { ...cudtomerDetails };
+                    newCustomerDetails.gstNumber = e.target.value;
+                    setCustomerDetails(newCustomerDetails);
+                  }}
+                />
+              </div>
+              <div className="form-group col-sm-12 col-md-12 mb-2">
+                <label htmlFor="hsnCode" className="form-label fw-bold mb-1">
+                  HSN Code
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="hsnCode"
+                  value={cudtomerDetails.hsnCode}
+                  onChange={(e) => {
+                    const newCustomerDetails = { ...cudtomerDetails };
+                    newCustomerDetails.hsnCode = e.target.value;
+                    setCustomerDetails(newCustomerDetails);
+                  }}
+                />
+              </div>
               <div className="bg-quinary bg-opacity-25 pt-2 rounded my-3 col-12">
                 <div className="row align-items-end pe-0 mb-2">
                   <div className="form-group col-sm-12 col-md-6">
@@ -370,97 +417,101 @@ export default function createInvoice() {
                     </label>
                   </div>
                 </div>
-                {products.map((product, i) => (
-                  <div
-                    className={`row align-items-center pe-0 mb-2 g-2 ${i > 0 ? "border-bottom" : ""}`}
-                    key={i}
-                  >
-                    <div className="form-group col-sm-12 col-md-6 mb-2">
-                      <input
-                        type="text"
-                        className="form-control"
-                        id={`productName-${i}`}
-                        value={product.productName}
-                        placeholder="Product Name"
-                        onChange={(e) => {
-                          const newProducts = [...products];
-                          newProducts[i].productName = e.target.value;
-                          setProducts(newProducts);
-                        }}
-                        required
-                      />
-                    </div>
-                    <div className="form-group col-sm-12 col-md-2 mb-2">
-                      <select
-                        className="form-select"
-                        id={`productQuantity-${i}`}
-                        onChange={(e) => {
-                          const newProducts = [...products];
-                          newProducts[i].quantity = Number(e.target.value);
-                          setProducts(newProducts);
-                        }}
-                        value={product.quantity}
-                        required
-                      >
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                      </select>
-                    </div>
-                    <div className="form-group col-sm-12 col-md-3 mb-2">
-                      <input
-                        type="number"
-                        className="form-control"
-                        id="amount"
-                        value={product.amount}
-                        onChange={(e) => {
-                          const newProducts = [...products];
-                          newProducts[i].amount = Number(e.target.value);
-                          setProducts(newProducts);
-                        }}
-                        required
-                      />
-                    </div>
-                    <div className="col-sm-12 col-md-1 mb-2 p-0">
-                      {products.length - 1 === i ? (
-                        <button
-                          className="btn btn-primary rounded-circle d-flex justify-content-center align-items-center"
-                          type="button"
-                          onClick={() => {
+                {products?.map((product, i) => {
+                  
+                  return (
+                    <div
+                      className={`row align-items-center pe-0 mb-2 g-2 
+                        ${products?.length - 1 > i ? "border-bottom" : ""}`}
+                      key={i}
+                    >
+                      <div className="form-group col-sm-12 col-md-6 mb-2">
+                        <input
+                          type="text"
+                          className="form-control"
+                          id={`productName-${i}`}
+                          value={product.productName}
+                          placeholder="Product Name"
+                          onChange={(e) => {
                             const newProducts = [...products];
-                            newProducts.push(initialProduct);
+                            newProducts[i].productName = e.target.value;
                             setProducts(newProducts);
                           }}
-                          style={{ width: 30, height: 30 }}
-                        >
-                          +
-                        </button>
-                      ) : (
-                        <button
-                          className="btn btn-danger rounded-circle d-flex justify-content-center align-items-center"
-                          type="button"
-                          onClick={() => {
+                          required
+                        />
+                      </div>
+                      <div className="form-group col-sm-12 col-md-2 mb-2">
+                        <select
+                          className="form-select"
+                          id={`productQuantity-${i}`}
+                          onChange={(e) => {
                             const newProducts = [...products];
-                            newProducts.splice(i, 1);
+                            newProducts[i].quantity = Number(e.target.value);
                             setProducts(newProducts);
                           }}
-                          style={{ width: 30, height: 30 }}
+                          value={product.quantity}
+                          required
                         >
-                          x
-                        </button>
-                      )}
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                        </select>
+                      </div>
+                      <div className="form-group col-sm-12 col-md-3 mb-2">
+                        <input
+                          type="number"
+                          className="form-control"
+                          id="amount"
+                          value={product.amount}
+                          onChange={(e) => {
+                            const newProducts = [...products];
+                            newProducts[i].amount = Number(e.target.value);
+                            setProducts(newProducts);
+                          }}
+                          required
+                        />
+                      </div>
+                      <div className="col-sm-12 col-md-1 mb-2 p-0">
+                        {products.length - 1 === i ? (
+                          <button
+                            className="btn btn-primary rounded-circle d-flex justify-content-center align-items-center"
+                            type="button"
+                            onClick={() => {
+                              const newProducts = [...products];
+                              newProducts.push(initialProduct);
+                              setProducts(newProducts);
+                            }}
+                            style={{ width: 30, height: 30 }}
+                          >
+                            +
+                          </button>
+                        ) : (
+                          <button
+                            className="btn btn-danger rounded-circle d-flex justify-content-center align-items-center"
+                            type="button"
+                            onClick={() => {
+                              const newProducts = [...products];
+                              newProducts.splice(i, 1);
+                              setProducts(newProducts);
+                            }}
+                            style={{ width: 30, height: 30 }}
+                          >
+                            x
+                          </button>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               <div className="form-group col-sm-12 col-md-6 mb-2">
@@ -500,7 +551,11 @@ export default function createInvoice() {
                     }));
                   }}
                 />
-                {invoiceDetails?.discountAmount > maxDiscountAmount && <small className="text-danger">Discount Amount can't be more then {maxDiscountAmount}.</small>}
+                {invoiceDetails?.discountAmount > maxDiscountAmount && (
+                  <small className="text-danger">
+                    Discount Amount can't be more then {maxDiscountAmount}.
+                  </small>
+                )}
               </div>
               <div className="col-12"></div>
               <div className="form-group col-sm-12 col-md-4 mb-2">
