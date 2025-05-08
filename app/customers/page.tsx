@@ -2,6 +2,7 @@
 
 import React, { use, useMemo, useState } from "react";
 import ControlledTable from "../DesignComponents/ControlledTable";
+import OptionsIcon from "../assets/icons/Options";
 
 type User = {
   name: string;
@@ -31,6 +32,17 @@ export default function Customers() {
       {
         header: "Department",
         accessorKey: "department",
+      },
+      {
+        header: "",
+        accessorKey: "actions",
+        cell: ({ row }) => {
+          return (
+            <div className="d-flex justify-content-center align-items-center">
+              <OptionsIcon />              
+            </div>
+          );
+        },
       },
     ],
     []
