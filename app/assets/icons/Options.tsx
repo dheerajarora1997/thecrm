@@ -7,7 +7,7 @@ export default function OptionsIcon() {
       viewBox="0 0 24 24"
       fill="none"
     >
-      <g clip-path="url(#clip0_15_64)">
+      <g clipPath="url(#clip0_15_64)">
         <rect width="24" height="24" />
         <g filter="url(#filter0_d_15_64)">
           <circle
@@ -15,7 +15,7 @@ export default function OptionsIcon() {
             cy="12"
             r="2"
             stroke="#000000"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
         </g>
         <g filter="url(#filter1_d_15_64)">
@@ -24,7 +24,7 @@ export default function OptionsIcon() {
             cy="12"
             r="2"
             stroke="#000000"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
         </g>
         <g filter="url(#filter2_d_15_64)">
@@ -33,7 +33,7 @@ export default function OptionsIcon() {
             cy="12"
             r="2"
             stroke="#000000"
-            stroke-linejoin="round"
+            strokeLinejoin="round"
           />
         </g>
       </g>

@@ -105,7 +105,7 @@
       display: none;
     }
     ul li:last-child {
-      width: calc($sidebar-width-collapse - 10px);
+      width: calc($sidebar-width-collapse - 2px);
     }
   }
 }
@@ -151,8 +151,8 @@
       position: fixed;
       bottom: 0;
       background-color: $primary;
-      width: calc($sidebar-width - 8px);
-      transition: width ease-in-out .3s;
+      width: calc($sidebar-width - 2px);
+      transition: width ease-in-out 0.3s;
       border-top: 1px solid $quinary;
     }
   }

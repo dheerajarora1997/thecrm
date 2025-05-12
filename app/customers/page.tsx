@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import ControlledTable from "../DesignComponents/ControlledTable";
 import OptionsIcon from "../assets/icons/Options";
 
@@ -39,7 +39,7 @@ export default function Customers() {
         cell: ({ row }) => {
           return (
             <div className="d-flex justify-content-center align-items-center">
-              <OptionsIcon />              
+              <OptionsIcon />
             </div>
           );
         },
@@ -151,19 +151,19 @@ export default function Customers() {
           <div className="card-body">
             <div className="row">
               <div className="col-12 col-sm-4 col-md-4">
-                <div className="card box-shadow border-0 bg-quinary p-3 mb-2">
+                <div className="card box-shadow border-0 bg-quinary bg-opacity-50 p-3 mb-2">
                   <h4>Total Customers</h4>
                   <h6 className="text-">4343</h6>
                 </div>
               </div>
               <div className="col-12 col-sm-4 col-md-4">
-                <div className="card box-shadow border-0 bg-quinary p-3 mb-2">
+                <div className="card box-shadow border-0 bg-quinary bg-opacity-50 p-3 mb-2">
                   <h4>Today's New</h4>
                   <h6 className="text-">12</h6>
                 </div>
               </div>
               <div className="col-12 col-sm-4 col-md-4">
-                <div className="card box-shadow border-0 bg-quinary p-3 mb-2">
+                <div className="card box-shadow border-0 bg-quinary bg-opacity-50 p-3 mb-2">
                   <h4>Recent Customers</h4>
                   <h6 className="text-">4343</h6>
                 </div>

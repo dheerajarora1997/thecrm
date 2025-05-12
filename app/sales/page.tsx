@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import ControlledTable from "../DesignComponents/ControlledTable";
 
 type Sale = {
@@ -142,19 +142,19 @@ export default function Sales() {
           <div className="card-body">
             <div className="row">
               <div className="col-12 col-sm-4 col-md-4">
-                <div className="card box-shadow border-0 bg-quinary p-3 mb-2">
+                <div className="card box-shadow border-0 bg-quinary bg-opacity-50 p-3 mb-2">
                   <h4>Total Sales</h4>
                   <h6 className="text-">4343</h6>
                 </div>
               </div>
               <div className="col-12 col-sm-4 col-md-4">
-                <div className="card box-shadow border-0 bg-quinary p-3 mb-2">
+                <div className="card box-shadow border-0 bg-quinary bg-opacity-50 p-3 mb-2">
                   <h4>Today's Sale</h4>
                   <h6 className="text-">12</h6>
                 </div>
               </div>
               <div className="col-12 col-sm-4 col-md-4">
-                <div className="card box-shadow border-0 bg-quinary p-3 mb-2">
+                <div className="card box-shadow border-0 bg-quinary bg-opacity-50 p-3 mb-2">
                   <h4>Last Week Sales</h4>
                   <h6 className="text-">4343</h6>
                 </div>

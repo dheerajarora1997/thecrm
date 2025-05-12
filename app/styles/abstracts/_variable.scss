@@ -1,22 +1,19 @@
-$primary: #2e5283; // Your main brand color (deep blue)
+$primary: #2e5283;
+$success: #28a745;
+$transparent: transparent;
+$septenary: #ffb703;
+$danger: #dc3545;
+$white: #ffffff;
+$offWhite: #f8f9fa;
+$dullWhite: #e2e6ea;
+$dark: #343a40;
+$muted: #6c757d;
 
-$secondary: #406fa6; // A slightly lighter blue for hover states or accents
-$tertiary: #1e3a5c; // Darker blue, great for headers or text overlays
-$quaternary: #6791c9; // A brighter blue, good for highlights or call-to-action
-$quinary: #a9c1e3; // A pale sky blue for soft backgrounds
-$senary: #f0f6fc; // Very light blue tone, UI backgrounds
-
-$success: #28a745; // Standard success green
-$transparent: transparent; // Useful for overlays or reset states
-$septenary: #ffb703; // A warm yellow-orange accent (optional attention/highlight)
-$danger: #dc3545; // A warm yellow-orange accent (optional attention/highlight)
-
-$white: #ffffff; // True white
-$offWhite: #f8f9fa; // Subtle soft white for backgrounds
-$dullWhite: #e2e6ea; // Light grey-white, soft borders or inactive elements
-
-$dark: #343a40; // Standard dark grey for text or backgrounds
-$muted: #6c757d; // Muted grey for less emphasis, like disabled elements
+$secondary: lighten($primary, 10%);
+$tertiary: darken($primary, 10%);
+$quaternary: lighten($primary, 20%);
+$quinary: lighten($primary, 40%);
+$senary: lighten($primary, 60%);
 
 $sidebar-width: 210px;
 $sidebar-width-collapse: 76px;
