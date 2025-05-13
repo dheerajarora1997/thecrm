@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import ControlledTable from "../DesignComponents/ControlledTable";
 import OptionsIcon from "../assets/icons/Options";
+import Link from "next/link";
 
 type User = {
   name: string;
@@ -38,8 +39,24 @@ export default function Customers() {
         accessorKey: "actions",
         cell: ({ row }) => {
           return (
-            <div className="d-flex justify-content-center align-items-center">
-              <OptionsIcon />
+            <div className="d-flex justify-content-center align-items-center table-action">
+              <div className="dropdown">
+                <button
+                  className="btn btn-trasnparent p-0"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <OptionsIcon />
+                </button>
+                <ul className="dropdown-menu position-absolute menu-right border-0 shadow">
+                  <li>
+                    <Link href="/customers/id" className="dropdown-item ">
+                      View
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           );
         },

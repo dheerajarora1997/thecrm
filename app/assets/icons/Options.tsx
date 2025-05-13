@@ -2,41 +2,12 @@ export default function OptionsIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30px"
-      height="30px"
-      viewBox="0 0 24 24"
-      fill="none"
+      viewBox="0 0 40 512"
+      fill="#343a40"
+      width={24}
+      height={24}
     >
-      <g clipPath="url(#clip0_15_64)">
-        <rect width="24" height="24" />
-        <g filter="url(#filter0_d_15_64)">
-          <circle
-            cx="6"
-            cy="12"
-            r="2"
-            stroke="#000000"
-            strokeLinejoin="round"
-          />
-        </g>
-        <g filter="url(#filter1_d_15_64)">
-          <circle
-            cx="12"
-            cy="12"
-            r="2"
-            stroke="#000000"
-            strokeLinejoin="round"
-          />
-        </g>
-        <g filter="url(#filter2_d_15_64)">
-          <circle
-            cx="18"
-            cy="12"
-            r="2"
-            stroke="#000000"
-            strokeLinejoin="round"
-          />
-        </g>
-      </g>
+      <path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z" />
     </svg>
   );
 }

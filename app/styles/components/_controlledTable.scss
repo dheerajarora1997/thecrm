@@ -35,10 +35,18 @@
             background: $white;
           }
         }
+        .table-action button {
+          opacity: 0.6;
+          max-width: 30px;
+          min-width: 20px;
+        }
         &:hover {
           td,
           th {
             background: rgba($quinary, 0.3);
+          }
+          .table-action button {
+            opacity: 0.8;
           }
         }
       }
