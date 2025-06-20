@@ -24,7 +24,7 @@ export default function CreateCustomer() {
     totalAmount: 0,
     lastOrderDate: "",
     lastOrderStatus: "",
-  }
+  };
 
   const [custDetails, setCustDetails] = useState(customerDetails);
   return (
@@ -34,77 +34,101 @@ export default function CreateCustomer() {
           <div className="col-12 col-md-3 order-2 order-md-1 mt-3 mb-md-0">
             <div className="bg-quinary bg-opacity-25 border border-primary border-opacity-50 p-3 rounded-3 shadow-sm w-100">
               <div className="d-flex align-items-end mb-3">
-                <h3 className="mb-0 pe-1">{custDetails?.firstName}</h3>
-                <h5 className="mb-0">{custDetails?.lastName}</h5>
+                <h3 className="mb-0 pe-1">
+                  {custDetails?.firstName || "Name"}
+                </h3>
+                <h5 className="mb-0">{custDetails?.lastName || "Here"}</h5>
               </div>
               <p className="text-muted mb-1">
                 <small className="text-primary text-opacity-50 d-block">
                   E-Mail Address:{" "}
                 </small>
-                {custDetails?.emailAddress}
+                {custDetails?.emailAddress || "email@example.com"}
               </p>
               <p className="text-muted mb-1">
                 <small className="text-primary text-opacity-50 d-block">
                   Phone Number:{" "}
                 </small>
-                {custDetails?.phonenumber}
+                {custDetails?.phonenumber || "+91 999 999 9999"}
               </p>
               <p className="text-muted mb-1">
-                <small className="text-primary text-opacity-50 d-block">Address: </small>
-                {custDetails?.address}
+                <small className="text-primary text-opacity-50 d-block">
+                  Address:{" "}
+                </small>
+                {custDetails?.address || "XYZ, Street Name, Area"}
               </p>
               <p className="text-muted mb-1">
-                <small className="text-primary text-opacity-50 d-block">City: </small>
-                {custDetails?.city}
+                <small className="text-primary text-opacity-50 d-block">
+                  City:{" "}
+                </small>
+                {custDetails?.city || "City Name"}
               </p>
               <p className="text-muted mb-1">
-                <small className="text-primary text-opacity-50 d-block">State: </small>
-                {custDetails?.state}
+                <small className="text-primary text-opacity-50 d-block">
+                  State:{" "}
+                </small>
+                {custDetails?.state || "State Name"}
               </p>
               <p className="text-muted mb-1">
-                <small className="text-primary text-opacity-50 d-block">Zip Code: </small>
-                {custDetails?.zip}
+                <small className="text-primary text-opacity-50 d-block">
+                  Zip Code:{" "}
+                </small>
+                {custDetails?.zip || "000000"}
               </p>
               <p
                 className={`text-muted mb-1 ${custDetails?.aadhar ? "" : "d-none"}`}
               >
-                <small className="text-primary text-opacity-50 d-block">AAdhar: </small>
+                <small className="text-primary text-opacity-50 d-block">
+                  AAdhar:{" "}
+                </small>
                 {custDetails?.aadhar}
               </p>
               <p
                 className={`text-muted mb-1 ${custDetails?.pannumber ? "" : "d-none"}`}
               >
-                <small className="text-primary text-opacity-50 d-block">hello: </small>
+                <small className="text-primary text-opacity-50 d-block">
+                  hello:{" "}
+                </small>
                 {custDetails?.pannumber}
               </p>
               <p
                 className={`text-muted mb-1 ${custDetails?.gstNumber ? "" : "d-none"}`}
               >
-                <small className="text-primary text-opacity-50 d-block">hello: </small>
+                <small className="text-primary text-opacity-50 d-block">
+                  hello:{" "}
+                </small>
                 {custDetails?.gstNumber}
               </p>
               <p
                 className={`text-muted mb-1 ${custDetails?.hsnCode ? "" : "d-none"}`}
               >
-                <small className="text-primary text-opacity-50 d-block">hello: </small>
+                <small className="text-primary text-opacity-50 d-block">
+                  hello:{" "}
+                </small>
                 {custDetails?.hsnCode}
               </p>
               <p
                 className={`text-muted mb-1 ${custDetails?.createdAt ? "" : "d-none"}`}
               >
-                <small className="text-primary text-opacity-50 d-block">hello: </small>
+                <small className="text-primary text-opacity-50 d-block">
+                  hello:{" "}
+                </small>
                 {custDetails?.createdAt}
               </p>
               <p
                 className={`text-muted mb-1 ${custDetails?.updatedAt ? "" : "d-none"}`}
               >
-                <small className="text-primary text-opacity-50 d-block">hello: </small>
+                <small className="text-primary text-opacity-50 d-block">
+                  hello:{" "}
+                </small>
                 {custDetails?.updatedAt}
               </p>
               <p
                 className={`text-muted mb-1 ${orderDetails?.lastOrder ? "" : "d-none"}`}
               >
-                <small className="text-primary text-opacity-50 d-block">hello: </small>
+                <small className="text-primary text-opacity-50 d-block">
+                  hello:{" "}
+                </small>
                 {orderDetails?.lastOrder}
               </p>
             </div>

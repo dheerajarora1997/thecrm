@@ -107,8 +107,10 @@ export default function createInvoice() {
       <div className="row">
         <div className="col-12 col-md-6">
           <div className="d-flex justify-content-between align-items-center mb-3">
-          <h4 className="">Preview</h4>
-          <button className="btn btn-primary" onClick={generateInvoicePDF}>Download</button>
+            <h4 className="">Preview</h4>
+            <button className="btn btn-primary" onClick={generateInvoicePDF}>
+              Download
+            </button>
           </div>
           <div className="position-relative invoiceDesign">
             <div className="invoice-wrapper" id="invoiceToPrint">
@@ -441,7 +443,6 @@ export default function createInvoice() {
                   </div>
                 </div>
                 {products?.map((product, i) => {
-                  
                   return (
                     <div
                       className={`row align-items-center pe-0 mb-2 g-2 
@@ -562,9 +563,11 @@ export default function createInvoice() {
                   Discount Amount
                 </label>
                 <input
-                  type="number"
+                  type="range"
                   className={`form-control ${invoiceDetails?.discountAmount > maxDiscountAmount ? "border-danger" : ""}`}
                   id="discountAmount"
+                  min={0}
+                  max={maxDiscountAmount}
                   value={invoiceDetails?.discountAmount}
                   onChange={(e) => {
                     let val = e.target.value;
